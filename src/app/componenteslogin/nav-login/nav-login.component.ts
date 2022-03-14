@@ -14,6 +14,7 @@ export class NavLoginComponent implements OnInit {
   showModeratorBoard = false;
   username?: string;
 
+
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
@@ -32,7 +33,8 @@ export class NavLoginComponent implements OnInit {
 
   logout(): void {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    window.location.href= "./login";
+
   }
 
 
