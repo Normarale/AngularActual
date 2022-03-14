@@ -34,11 +34,12 @@ h2, h3, h4, h5, h6 {
 # componentes General
 --------------------------------------------------------------*/
 
-#about, #estudios, #experiencia, #contacto, #login {
+#about, #estudios, #experiencia, #contacto, #proyecto, #login {
   margin-top: 170px;
   padding-top: 60px;
   width: 100%;
   overflow-y: hidden;
+  overflow-x:hidden;
   background-color: #040404;
 
 }

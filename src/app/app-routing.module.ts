@@ -5,6 +5,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { EstudiosComponent } from './componentes/estudios/estudios.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 import { LoginComponent } from './componenteslogin/login/login.component';
 import { ProfileComponent } from './componenteslogin/profile/profile.component';
 import { RegisterComponent } from './componenteslogin/register/register.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'profile', component: ProfileComponent },
-
+  {path: 'proyecto', component:ProyectoComponent},
   {path:'**' , redirectTo:'login', pathMatch:"full"}
 ];
 

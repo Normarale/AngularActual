@@ -1,0 +1,37 @@
+
+/*--------------------------------------------------------------
+# Proyectos
+--------------------------------------------------------------*/
+.proyecto .content h3 {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #d2188e;
+}
+
+.proyecto .content ul {
+  list-style: none;
+  padding: 0;
+}
+.proyecto .content ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.proyecto .content ul strong {
+  margin-right: 10px;
+}
+.proyecto .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #d2188d;
+  line-height: 0;
+}
+.proyecto .content p:last-child {
+  margin-bottom: 0;
+}
+
+img{
+  width: 500px;
+  height: 200px;
+}

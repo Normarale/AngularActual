@@ -17,6 +17,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { RegisterComponent } from './componenteslogin/register/register.component';
 import { ProfileComponent } from './componenteslogin/profile/profile.component';
 import { NavLoginComponent } from './componenteslogin/nav-login/nav-login.component';
+import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 
 
 
@@ -33,6 +34,7 @@ import { NavLoginComponent } from './componenteslogin/nav-login/nav-login.compon
    RegisterComponent,
    ProfileComponent,
    NavLoginComponent,
+   ProyectoComponent,
 
   ],
   imports: [
