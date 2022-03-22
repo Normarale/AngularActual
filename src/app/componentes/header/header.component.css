@@ -1,1 +1,10 @@
 
+#pencil{
+  color: deeppink;
+  height: 20px;
+  border-radius: 50px;
+  display:flex;
+}
+h1 input{
+  background:transparent;
+}

@@ -29,7 +29,8 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/ArchivosExternos/boxicons/css/boxicons.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/ArchivosExternos/fontawesome/css/fontawesome.min.css"
 
 
             ],

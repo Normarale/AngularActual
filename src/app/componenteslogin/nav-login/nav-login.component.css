@@ -3,3 +3,8 @@
   color: #f8abd6fd;
 
 }
+.navbar-collapse.show {
+
+  background-color:rgba(04, 04, 04, 0.8);
+
+}

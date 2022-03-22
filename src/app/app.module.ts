@@ -19,6 +19,8 @@ import { ProfileComponent } from './componenteslogin/profile/profile.component';
 import { NavLoginComponent } from './componenteslogin/nav-login/nav-login.component';
 import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
    ProfileComponent,
    NavLoginComponent,
    ProyectoComponent,
+
+   PortfolioComponent,
 
   ],
   imports: [
