@@ -1,5 +1,16 @@
  <!--  Sección Contacto  -->
  <section id="contacto" class="contacto">
+  <button *ngIf="isLoggenIdContacto" (click)="setEditar()">
+    <i id="pencil"class="fas fa-edit"></i>
+   </button>
+
+    <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="contacto"><br>
+    <input *ngIf="getEditar()" type="text" #fecha [(ngModel)]="contacto"><br>
+    <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="contacto">
+    <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="contacto">
+    <button *ngIf="isLoggenIdContacto">
+       <i  id= "pencil"class="fa fa-trash"></i>
+     </button>
   <div class="container">
 
           <div class="section-title">

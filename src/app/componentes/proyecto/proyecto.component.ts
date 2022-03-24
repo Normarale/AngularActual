@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-proyecto',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectoComponent implements OnInit {
 
+  @Input()
+  isLoggenIdProyecto: boolean=false;
+
+  proyecto:any;
+  contenido?:string;
+  private editar:boolean=false
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  public setEditar(): void
+  {this.editar==false?this.editar=true:this.editar=false;}
+
+  public getEditar():boolean{return this.editar;}
 
 }

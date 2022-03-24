@@ -3,6 +3,18 @@
 <section id="proyecto" class="proyecto">
 
   <!--  Proyectos -->
+  <button *ngIf="isLoggenIdProyecto" (click)="setEditar()">
+    <i id="pencil"class="fas fa-edit"></i>
+   </button>
+
+    <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="proyecto"><br>
+    <input *ngIf="getEditar()" type="text" #fecha [(ngModel)]="proyecto"><br>
+    <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="proyecto">
+    <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="proyecto">
+    <button *ngIf="isLoggenIdProyecto">
+       <i  id= "pencil"class="fa fa-trash"></i>
+     </button>
+
   <div class="proyecto container">
 
           <div class="section-title">
@@ -23,7 +35,7 @@
                         <p class="fst-italic">
                           Mi Portfolio personal
                       </p>
-                      
+
 
                      </div>
 

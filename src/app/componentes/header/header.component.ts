@@ -2,8 +2,7 @@
 import { DatosService } from './../../servicios/datos.service';
 
 import { Component, Input, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/servicios/token-storage.service';
-import { AuthService } from 'src/app/servicios/auth.service';
+
 
 
 @Component({
@@ -12,14 +11,26 @@ import { AuthService } from 'src/app/servicios/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input()
+  isLoggenIdHeader: boolean=false;
+
 
 misdatos:any;
 contenido?:string;
+ nombre?:string
+apellido:string="";
+fec_nacimiento:string ="";
+nacionalidad:string ="";
+sobremi:string = "";
+email:string ="";
+ocupacion:string =""
+
 private editar:boolean=false
 
 
 
   constructor( private datos:DatosService) { }
+
 
   ngOnInit(): void {
 
@@ -31,8 +42,11 @@ private editar:boolean=false
 
     })
 
+      
+
     }
- 
+
+
 
     public setEditar(): void
     {this.editar==false?this.editar=true:this.editar=false;}

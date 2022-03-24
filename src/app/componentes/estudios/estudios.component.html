@@ -1,6 +1,16 @@
  <!--  Sección estudios y cursos -->
  <section id="estudios" class="estudio">
-  <div data-aos="fade-up">
+  
+    <button *ngIf="isLoggenIdEstudios" (click)="setEditar()">
+      <i id="pencil"class="fas fa-edit"></i>
+     </button>
+
+      <input *ngIf="getEditar()" type="text" #nombre [(ngModel)]="estudios"><br>
+      <input *ngIf="getEditar()" type="text" #apellido [(ngModel)]="estudios"><br>
+      <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="estudios">
+      <button *ngIf="isLoggenIdEstudios">
+         <i  id= "pencil"class="fa fa-trash"></i>
+       </button>
       <div class="container">
 
           <div class="section-title">
@@ -77,7 +87,7 @@
               </div>
           </div>
       </div>
-  </div>
+
 </section><!-- Fin estudios y cursos -->
 
 

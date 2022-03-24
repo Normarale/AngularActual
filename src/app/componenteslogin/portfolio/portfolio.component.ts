@@ -7,6 +7,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
+  public isLoggenId = true;
   misdatos:any;
   private editar:boolean=false
   constructor( private datos:DatosService) { }

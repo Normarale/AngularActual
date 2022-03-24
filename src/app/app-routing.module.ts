@@ -5,7 +5,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { EstudiosComponent } from './componentes/estudios/estudios.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { HeaderComponent } from './componentes/header/header.component';
-import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { PortfolioComponent } from './componenteslogin/portfolio/portfolio.component';
 import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 import { LoginComponent } from './componenteslogin/login/login.component';
 import { ProfileComponent } from './componenteslogin/profile/profile.component';

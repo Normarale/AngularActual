@@ -7,7 +7,6 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
   styleUrls: ['./nav-login.component.css']
 })
 export class NavLoginComponent implements OnInit {
-
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;

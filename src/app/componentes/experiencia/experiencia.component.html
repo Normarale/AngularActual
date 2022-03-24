@@ -3,6 +3,17 @@
 <section id="experiencia" class="experiencia">
 
   <!--  Experiencias -->
+
+  <button *ngIf="isLoggenIdExperiencia" (click)="setEditar()">
+    <i id="pencil"class="fas fa-edit"></i>
+   </button>
+
+    <input *ngIf="getEditar()" type="text" #nombre [(ngModel)]="experiencia"><br>
+    <input *ngIf="getEditar()" type="text" #apellido [(ngModel)]="experiencia"><br>
+    <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="experiencia">
+    <button *ngIf="isLoggenIdExperiencia">
+       <i  id= "pencil"class="fa fa-trash"></i>
+     </button>
   <div class="experiencia container">
 
           <div class="section-title">
@@ -12,13 +23,13 @@
 
       <div class="row">
               <div class="col-lg-9">
-                  <h3>Mutual de Sociedad Cultural</h3>
+                  <h3>{{experiencia.nombreempresa}}</h3>
                   <p class="fst-italic">
-                      Administrativa y a cargo de gerencia
+                      {{experiencia.descripcion}}
                   </p>
                   <div class="row"></div>
                       <div class="col-lg-2">
-                         <p> 01/2004- 01/2021</p>
+                         <p> {{experiencia.fecinicio}}*{{experiencia.fecfinal}}</p>
                       </div>
                       <div class="col-lg-8">
                           <p> 17 años desempeñando tareas Administrativas y de soporte a gerencia,
