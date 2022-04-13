@@ -1,6 +1,6 @@
  <!--  Sección estudios y cursos -->
  <section id="estudios" class="estudio">
-  
+
     <button *ngIf="isLoggenIdEstudios" (click)="setEditar()">
       <i id="pencil"class="fas fa-edit"></i>
      </button>
@@ -19,69 +19,43 @@
           </div>
 
           <div class="row">
-              <div class="col-lg-6">
+              <div  class="col-lg-6" >
 
                    <h3 class="estudio-title">Educación</h3>
-                      <div class="estudio-item">
-                          <h4>Ingeniera en Sistemas de Información</h4>
-                          <h5>1993 - 2003</h5>
-                          <p><em>Universidad Tecnológica Nacional</em></p>
+                      <div *ngFor="let estudio of estudios.slice(0,2)" class="dropdown-estudio" class="estudio-item">
+
+                          <h4 >{{estudio.titulo}}</h4>
+                          <h5>{{estudio.fechaDesde}} - {{estudio.fechaHasta}}</h5>
+                          <p><em>{{estudio.institucion}}</em></p>
                           <p>Facultad Regional Córdoba</p>
-                      </div>
-                      <div class="estudio-item">
-                          <h4>Analista Universitaria de Sistemas</h4>
-                          <h5>1993 - 2001</h5>
-                          <p><em>Universidad Tecnológica Nacional</em></p>
-                          <p>Facultad Regional Córdoba</p>
+
                       </div>
               </div>
+
               <div class="col-lg-6">
                   <h3 class="estudio-title">Cursos</h3>
-                      <div class="estudio-item">
-                          <h2 class="estudio-title">Desarrollo Web</h2>
-                          <h4>FrontEnd Web Developer</h4>
-                          <h5>junio 2021</h5>
-                          <p><em>Udemy </em></p>
+                       <h2 class="estudio-title">Desarrollo Web</h2>
+                      <div *ngFor="let estudio of estudios.slice(2,8)"class="estudio-item">
+                          <h4>{{estudio.titulo}}</h4>
+                          <h5>{{estudio.fechaDesde}} - {{estudio.fechaHasta}}</h5>
+                          <p><em>{{estudio.institucion}} </em></p>
+                          <img src= {{estudio.imagen}}>
+                      </div>
 
-                          <h4>Argentina Programa -#SeProgramar</h4>
-                          <h5>junio 2021</h5>
-                          <p><em>Ministerio de desarrollo Productivo -Cessi </em></p>
+                      <h2 class="estudio-title">Ciencias de Datos</h2>
+                      <div *ngFor="let estudio of estudios.slice(8,12)"class="estudio-item">
 
-                          <h4>JavaScript esencial</h4>
-                          <h5> Agosto 2021</h5>
-                          <p><em>linkedin LEARNING</em></p>
-
-                          <h4>SQL Consultas básicas a complejas</h4>
-                          <h5>Agosto 2021</h5>
-                          <p><em>Udemy </em></p>
-
-                          <h4>Argentina Programa -#YoProgramo</h4>
-                          <h5>Mayo 2022</h5>
-                          <p><em>Ministerio de desarrollo Productivo -Cessi </em></p>
+                          <h4>{{estudio.titulo}}</h4>
+                          <h5>{{estudio.fechaDesde}} - {{estudio.fechaHasta}}</h5>
+                          <p><em>{{estudio.institucion}}</em></p>
 
                       </div>
-                      <div class="estudio-item">
-                          <h2 class="estudio-title">Ciencias de Datos</h2>
-                          <h4>MeTCaMP Data Science</h4>
-                          <h5>Julio 2021</h5>
-                          <p><em>MET [Mujeres en Tecnología]</em></p>
+                      <h2 class="estudio-title">Actualmente</h2>
+                      <div *ngFor="let estudio of estudios.slice(12,20)" class="estudio-item">
 
-                          <h4>Curso de Python para ciencias de datos y Machine Learning</h4>
-                          <h5>Octubre 2021</h5>
-                          <p><em>Udemy</em></p>
-
-                          <p>
-                          <h4>Desembarcando en R</h4>
-                          <h5>Diciembre 2021</h5>
-                          <p><em>Escuela de Datos Vivos</em></p>
-
-
-                      </div>
-                      <div class="estudio-item">
-                          <h2 class="estudio-title">Actualmente</h2>
-                          <h4>Diplomatura en Ciencias de Datos con R y Python</h4>
-                          <h5>presente</h5>
-                          <p><em>Instituto Data Science</em></p>
+                          <h4>{{estudio.titulo}}</h4>
+                          <h5>{{estudio.fechaDesde}} - {{estudio.fechaHasta}}</h5>
+                          <p><em>{{estudio.institucion}} </em></p>
 
                       </div>
               </div>

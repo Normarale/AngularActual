@@ -1,3 +1,4 @@
+import { EstudiosService } from './../../servicios/estudios.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -14,9 +15,16 @@ export class EstudiosComponent implements OnInit {
   contenido?:string;
   private editar:boolean=false
 
-  constructor() { }
+  constructor(private est:EstudiosService) { }
+
 
   ngOnInit(): void {
+
+    this.est.obtenerestudio().subscribe(data=>{
+      console.log("Estudios " + JSON.stringify(data))
+
+        this.estudios = data;
+      })
   }
 
   public setEditar(): void

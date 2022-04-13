@@ -17,13 +17,13 @@ export class HeaderComponent implements OnInit {
 
 misdatos:any;
 contenido?:string;
- nombre?:string
+/* nombre?:string
 apellido:string="";
 fec_nacimiento:string ="";
 nacionalidad:string ="";
 sobremi:string = "";
 email:string ="";
-ocupacion:string =""
+ocupacion:string =""*/
 
 private editar:boolean=false
 
@@ -42,7 +42,7 @@ private editar:boolean=false
 
     })
 
-      
+
 
     }
 

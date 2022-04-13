@@ -3,6 +3,11 @@
 /*--------------------------------------------------------------
 # Experiencia
 --------------------------------------------------------------*/
+#experiencia{
+  background: #040404;
+  height: 60%;
+}
+
 .experiencia .content h3 {
   margin-top: 30px;
   font-weight: 700;
