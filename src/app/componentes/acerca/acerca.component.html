@@ -14,15 +14,15 @@
       <input *ngIf="getEditar()" type="text" #fecha [(ngModel)]="misdatos.fecNacimiento"><br>
       <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="misdatos.sobremi">
       <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="misdatos.mail">
-      <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="miloc.localidad">
-      <input *ngIf="getEditar()" type="text" #html [(ngModel)] ="mitecno.tecnologia"><br>
+      <input *ngIf="getEditar()" type="text" id = "localidad" [(ngModel)]="miloc.localidad">
+      <input *ngIf="getEditar()" type="text" #tecno [(ngModel)]="mitecno.tecnologia"><br>
 
 
       <button *ngIf="isLoggenIdAcerca">
          <i  id= "pencil"class="fa fa-trash"></i>
        </button>
 
-       <button *ngIf="isLoggenIdAcerca">
+       <button *ngIf="isLoggenIdAcerca" (click)="editarLocalidad()">
         <i id="pencil"class="fas fa-save"></i>
        </button>
 
@@ -35,19 +35,19 @@
 
                 <div class="row">
                         <div class="col-lg-4">
-                        <img src="{{misdatos.img_perfil}}" class="img-fluid" alt="">
+                        <img src="{{misdatos?.img_perfil}}" class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-8 pt-4 pt-lg-0 content"  >
                             <h3>Desarrolladora Web &amp;-FullStack Developer jr-</h3>
                             <p class="fst-italic">
-                                {{misdatos.sobremi}}.
+                                {{misdatos?.sobremi}}.
                             </p>
                             <div class="row">
                                     <div class="col-lg-6">
                                             <ul>
-                                              <li><i class="fas fa-chevron-right color"></i> <strong>Mi Cumpleaños:</strong> <span >{{misdatos.fecNacimiento}}</span></li>
+                                              <li><i class="fas fa-chevron-right color"></i> <strong>Mi Cumpleaños:</strong> <span >{{misdatos?.fecNacimiento}}</span></li>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Intereses:</strong> <span>Diseño, desarrollo, análisis</span></li>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Localidad:</strong> <span>{{miloc.localidad}}, Córdoba -Argentina-</span></li>
+                                                <li><i class="fas fa-chevron-right color"></i> <strong>Localidad:</strong> <span>{{miloc?.localidad}}, Córdoba -Argentina-</span></li>
 
                                             </ul>
                                     </div>
@@ -55,7 +55,7 @@
                                             <ul>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Edad:</strong> <span>46</span></li>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Estudios:</strong> <span>Universitarios</span></li>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Email:</strong> <span>{{misdatos.mail}}</span></li>
+                                                <li><i class="fas fa-chevron-right color"></i> <strong>Email:</strong> <span>{{misdatos?.mail}}</span></li>
 
                                             </ul>
                                     </div>
@@ -84,44 +84,44 @@
               <div *ngFor="let tec of mitecno; let i = index; " class="col-lg-6">
 
                 <div  class="progress">
-                    <span *ngIf="i === 0" class="skill" >{{tec.tecnologia}} <i class="val">95%</i></span>
+                    <span *ngIf="i === 0" class="skill" >{{tec?.tecnologia}} <i class="val">95%</i></span>
                     <div *ngIf="i === 0"   class="progress-bar-wrap">
                       <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span *ngIf="i === 1" class="skill" >{{tec.tecnologia}} <i class="val">90%</i></span>
+                    <span *ngIf="i === 1" class="skill" >{{tec?.tecnologia}} <i class="val">90%</i></span>
                         <div *ngIf="i === 1" class="progress-bar-wrap">
                           <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span *ngIf="i === 2" class="skill" >{{tec.tecnologia}} <i class="val">80%</i></span>
+                        <span *ngIf="i === 2" class="skill" >{{tec?.tecnologia}} <i class="val">80%</i></span>
                         <div *ngIf="i === 2"   class="progress-bar-wrap">
                           <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span *ngIf="i === 3" class="skill" >{{tec.tecnologia}} <i class="val">80%</i></span>
+                        <span *ngIf="i === 3" class="skill" >{{tec?.tecnologia}} <i class="val">80%</i></span>
                             <div *ngIf="i === 3" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <span *ngIf="i === 4" class="skill" >{{tec.tecnologia}} <i class="val">75%</i></span>
+                            <span *ngIf="i === 4" class="skill" >{{tec?.tecnologia}} <i class="val">75%</i></span>
                             <div *ngIf="i === 4" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <span *ngIf="i === 5" class="skill" >{{tec.tecnologia}} <i class="val">75%</i></span>
+                            <span *ngIf="i === 5" class="skill" >{{tec?.tecnologia}} <i class="val">75%</i></span>
                             <div *ngIf="i === 5" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <span *ngIf="i === 6" class="skill" >{{tec.tecnologia}} <i class="val">60%</i></span>
+                            <span *ngIf="i === 6" class="skill" >{{tec?.tecnologia}} <i class="val">60%</i></span>
                             <div *ngIf="i === 6" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <span *ngIf="i === 7" class="skill" >{{tec.tecnologia}} <i class="val">65%</i></span>
+                            <span *ngIf="i === 7" class="skill" >{{tec?.tecnologia}} <i class="val">65%</i></span>
                             <div *ngIf="i === 7" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
-                            <span *ngIf="i === 8" class="skill" >{{tec.tecnologia}} <i class="val">85%</i></span>
+                            <span *ngIf="i === 8" class="skill" >{{tec?.tecnologia}} <i class="val">85%</i></span>
                             <div *ngIf="i === 8" class="progress-bar-wrap">
                               <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>

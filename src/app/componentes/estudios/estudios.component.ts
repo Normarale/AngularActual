@@ -11,8 +11,13 @@ export class EstudiosComponent implements OnInit {
   @Input()
   isLoggenIdEstudios: boolean=false;
 
-  estudios:any;
-  contenido?:string;
+  estudios?:any;
+  titulo?:string;
+  fechadesde?:string;
+  fechaHasta?:string ;
+  institucion?:string;
+  imagen?:string ;
+
   private editar:boolean=false
 
   constructor(private est:EstudiosService) { }

@@ -15,31 +15,45 @@
        <i  id= "pencil"class="fa fa-trash"></i>
      </button>
 
-  <div class="proyecto container">
+     <div class="proyecto container">
 
-          <div class="section-title">
-              <h2> Mis Proyectos</h2>
-
-          </div>
-
-      <div class="row">
-              <div class="col-lg-9">
-                  <h3>Portfolio</h3>
-
-                  <img src="{{proyecto.fotoUrl}}" class="img-fluid" alt="">
-
-               </div>
-                    <div class="col-lg-3 pt-lg-3 pt-lg-0 content "  >
-                      <p> Primer proyecto en IT  <br>
-                        Desarrollo:trabajo final </p>
-                        <p class="fst-italic">
-                          {{proyecto.proyectoDesc}}
-                      </p>
-
-
-                     </div>
+      <div class="section-title">
+          <h2> Mis Proyectos</h2>
 
       </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">Todos</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-card">Web</li>
+            <li data-filter=".filter-web">Data Science</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row proyecto-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="proyecto-wrap">
+            <img src="{{proyecto?.fotoUrl}}" class="img-fluid" alt="">
+            <div class="proyecto-info">
+              <h4>{{proyecto?.proyectoDesc}}</h4>
+              <p>Web</p>
+             <!-- <div class="portfolio-links">
+                <a href="../../../assets/img/MyPortfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="" data-gallery="portfoliodetalleGalery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>-->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
 
   </div>
 

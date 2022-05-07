@@ -2,10 +2,12 @@
       <!--Barra de navegacion-->
 
       <div class="tituloppal">
-          <img src="{{misdatos.img_background}}">
-           <h1>{{misdatos.nombre}}{{misdatos.apellido}}</h1>
-            <h2>{{misdatos.sobremi}}</h2>
+
+          <img src="{{misdatos?.img_background}}">
+           <h1>{{misdatos?.nombre}} {{misdatos?.apellido}}</h1>
+            <h2>{{misdatos?.sobremi}}</h2>
                     <h3>-Desarrolladora Fullstack Jr-<span> Argentina Programa</span></h3>
+
 
             <div class="social-links">
               <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -17,15 +19,22 @@
 
             <button *ngIf="isLoggenIdHeader" (click)="setEditar()">
               <i id="pencil"class="fas fa-edit"></i>
-             </button>
 
-              <input *ngIf="getEditar()" type="text" #nombre  [(ngModel)]="misdatos.nombre" ><br>
-              <input *ngIf="getEditar()" type="text" #apellido [(ngModel)]="misdatos.apellido"><br>
-              <input *ngIf="getEditar()" type="text" #sobremi [(ngModel)]="misdatos.sobremi">
+            </button><br>
 
-              <button *ngIf="isLoggenIdHeader" (click)="setEditar()" >
+            <input *ngIf="getEditar()"  type="text" id ="nombre" [(ngModel)]="misdatos.nombre"><br>
+            <input *ngIf="getEditar()"  type="text" id="apellido" [(ngModel)]="misdatos.apellido"><br>
+            <input *ngIf="getEditar()"  type="text" id="sobremi" [(ngModel)]="misdatos.sobremi">
+            <input *ngIf="getEditar()"  type="text" id="imagenfondo" [(ngModel)]="misdatos.img_background">
+
+              <button *ngIf="isLoggenIdHeader" (click)="Eliminar()" >
                  <i  id= "pencil"class="fa fa-trash"></i>
                </button>
+
+               <button *ngIf="isLoggenIdHeader" (click)="actualizar()" >
+                <i  id= "pencil"class="fa fa-save"></i>
+
+              </button>
 
 
 
