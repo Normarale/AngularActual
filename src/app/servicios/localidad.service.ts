@@ -25,7 +25,7 @@ export class LocalidadService {
 
   editarlocalidad(idLocalidad: any, data:any):Observable<any>{
 
-    return this.http.put<any>(API_LOCALIDAD + `localidad/editar/`, data, httpOptions);
+    return this.http.put<any>(API_LOCALIDAD + "localidad/editar"+ "/" + idLocalidad, {data}, httpOptions);
   }
 
    public delete(id: number):Observable<any>{

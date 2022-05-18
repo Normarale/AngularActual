@@ -1,3 +1,4 @@
+import { DomiciliosService } from './../../servicios/domicilios.service';
 import { TecnologiasService } from './../../servicios/tecnologias.service';
 import { LocalidadService } from './../../servicios/localidad.service';
 import { Component, Input, OnInit } from '@angular/core';
@@ -19,11 +20,28 @@ export class AcercaComponent implements OnInit {
    public misdatos:any;
    public miloc:any;
    public mitecno:any;
+   public domi: any;
    public contenido?:string;
+
+  public id?:any;
+  public img_background?:string;
+  public nombre?:string;
+  public apellido?:string;
+  public fecha?:string;
+  public sobremi?:string;
+  public img_perfil?:string;
+  public ocupacion?:string ;
+  public mail?:string;
+  public nacionalidad?:string;
+  public idDomicilio?:any;
+  public direccion?:string;
+  public altura?: string;
+
+
    private editar:boolean=false
 
 
-  constructor(private _cargaSkill:CargarSkilService,  private datos:DatosService, private loc:LocalidadService, private tecno:TecnologiasService) {
+  constructor(private _cargaSkill:CargarSkilService,  private datos:DatosService, private dom:DomiciliosService, private loc:LocalidadService, private tecno:TecnologiasService) {
     _cargaSkill.carga(["/skil"]);
    }
 
@@ -33,6 +51,12 @@ export class AcercaComponent implements OnInit {
     this.datos.obtenerdatos().subscribe(data=>{
       console.log("Datos Personales" + JSON.stringify(data));
       this.misdatos=data[0];
+
+    })
+
+    this.dom.obtenerdomicilios().subscribe(data=>{
+      console.log("Datos Domicilio" + JSON.stringify(data));
+      this.domi = data[0];
 
     })
 
@@ -53,19 +77,28 @@ export class AcercaComponent implements OnInit {
 
    }
 
-   public editarLocalidad(){
-    this.loc.obtenerlocalidad()
+   public editarDatos(){
 
-    this.miloc.localidad = (<HTMLInputElement>document.getElementById("localidad")).value;
-    const data = {
-      codPostal:this.miloc.codigoPostal,
-      localidad:this.miloc.localidad
-     };
-     console.log(data)
-     this.loc.editarlocalidad(this.idLocalidad, data).subscribe(data=>{
-      console.log("localidad modificada")
+   this.id = this.misdatos.id;
 
-     });
+    this.idDomicilio = this.misdatos.idDomicilio;
+
+    console.log(this.idDomicilio);
+   this.nombre = (<HTMLInputElement>document.getElementById("nombre")).value;
+   this.apellido = (<HTMLInputElement>document.getElementById("apellido")).value;
+   this.sobremi=(<HTMLInputElement>document.getElementById("sobremi")).value;
+   this.img_background = (<HTMLInputElement>document.getElementById("fondo")).value;
+   this.fecha = (<HTMLInputElement>document.getElementById("fecha")).value;
+   this.img_perfil = (<HTMLInputElement>document.getElementById("imagen")).value;
+   this.nacionalidad = (<HTMLInputElement>document.getElementById("nacionalidad")).value;
+   this.ocupacion = (<HTMLInputElement>document.getElementById("ocupacion")).value;
+   this.mail = (<HTMLInputElement>document.getElementById("mail")).value;
+
+
+     this.datos.editarDatos(this.id, this.nombre, this.apellido,  this.img_background, this.sobremi, this.fecha, this.mail, this.img_perfil, this.nacionalidad, this.ocupacion, this.idDomicilio ).subscribe(data=>{
+      console.log("datos modificados"+ JSON.stringify(data))
+     })
+
 
 
    }

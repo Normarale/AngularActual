@@ -9,20 +9,22 @@
     <button *ngIf="isLoggenIdAcerca" (click)="setEditar()">
       <i id="pencil"class="fas fa-edit"></i>
      </button>
-
-      <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="misdatos.img_perfil"><br>
-      <input *ngIf="getEditar()" type="text" #fecha [(ngModel)]="misdatos.fecNacimiento"><br>
-      <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="misdatos.sobremi">
-      <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="misdatos.mail">
-      <input *ngIf="getEditar()" type="text" id = "localidad" [(ngModel)]="miloc.localidad">
-      <input *ngIf="getEditar()" type="text" #tecno [(ngModel)]="mitecno.tecnologia"><br>
-
+      <input *ngIf="getEditar()" type="text" id = "nombre" [(ngModel)]="misdatos.nombre"><br>
+      <input *ngIf="getEditar()" type="text" id = "apellido" [(ngModel)]="misdatos.apellido"><br>
+      <input *ngIf="getEditar()" type="text" id = "imagen" [(ngModel)]="misdatos.img_perfil"><br>
+      <input *ngIf="getEditar()" type="text" id = "fecha" [(ngModel)]="misdatos.fecNacimiento"><br>
+      <input *ngIf="getEditar()" type="text" id = "sobremi" [(ngModel)]="misdatos.sobremi">
+      <input *ngIf="getEditar()" type="text" id = "mail" [(ngModel)]="misdatos.mail">
+      <input *ngIf="getEditar()" type="text" id = "ocupacion" [(ngModel)]="misdatos.ocupacion">
+      <input *ngIf="getEditar()" type="text" id = "nacionalidad" [(ngModel)]="misdatos.nacionalidad">
+      <input *ngIf="getEditar()" type="text" id = "fondo" [(ngModel)]="misdatos.img_background"><br>
+    
 
       <button *ngIf="isLoggenIdAcerca">
          <i  id= "pencil"class="fa fa-trash"></i>
        </button>
 
-       <button *ngIf="isLoggenIdAcerca" (click)="editarLocalidad()">
+       <button *ngIf="isLoggenIdAcerca" (click)="editarDatos()">
         <i id="pencil"class="fas fa-save"></i>
        </button>
 
@@ -43,22 +45,40 @@
                                 {{misdatos?.sobremi}}.
                             </p>
                             <div class="row">
+                              <div class="col-lg-6">
+                                <ul>
+                                  <li><i class="fas fa-chevron-right color"></i> <strong>Mi Nombre:</strong> <span >{{misdatos?.nombre}}</span></li>
+                                    <li><i class="fas fa-chevron-right color"></i> <strong>Apellido:</strong> <span>{{misdatos?.apellido}}</span></li>
+                                    <li><i class="fas fa-chevron-right color"></i> <strong>Edad:</strong> <span>46-</span></li>
+
+                                </ul>
+                        </div>
+
+
                                     <div class="col-lg-6">
                                             <ul>
                                               <li><i class="fas fa-chevron-right color"></i> <strong>Mi Cumpleaños:</strong> <span >{{misdatos?.fecNacimiento}}</span></li>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Intereses:</strong> <span>Diseño, desarrollo, análisis</span></li>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Localidad:</strong> <span>{{miloc?.localidad}}, Córdoba -Argentina-</span></li>
+                                                <li><i class="fas fa-chevron-right color"></i> <strong>Domicilio:</strong> <span>{{miloc?.localidad}}, Córdoba -Argentina-</span></li>
 
                                             </ul>
                                     </div>
                                     <div class="col-lg-6">
                                             <ul>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Edad:</strong> <span>46</span></li>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Estudios:</strong> <span>Universitarios</span></li>
-                                                <li><i class="fas fa-chevron-right color"></i> <strong>Email:</strong> <span>{{misdatos?.mail}}</span></li>
-
-                                            </ul>
+                                                <li><i class="fas fa-chevron-right color"></i> <strong>Ocupación:</strong> <span>{{misdatos?.ocupacion}}</span></li>
+                                                <li><i class="fas fa-chevron-right color"></i> <strong>Nacionalidad:</strong> <span>{{misdatos?.nacionalidad}}</span></li>
+                                             </ul>
                                     </div>
+
+
+                                    <div class="col-lg-6">
+                                      <ul>
+                                          <li><i class="fas fa-chevron-right color"></i> <strong>Estudios:</strong> <span>Universitarios</span></li>
+                                          <li><i class="fas fa-chevron-right color"></i> <strong>Email:</strong> <span>{{misdatos?.mail}}</span></li>
+
+                                      </ul>
+                              </div>
+
                             </div>
                                 <p>
                                     Desarrolladora Web -FullStack, Ingeniera en Sistemas.
