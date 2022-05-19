@@ -2,14 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+const API_LOCALIDAD = 'https://backendportofoliodelprato.herokuapp.com/api/test/';
 
-const API_LOCALIDAD = 'http://localhost:8080/api/test/';
-const API_LOCEDIT = 'http://localhost:8080/api/test/localidad/editar';
 
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
 
 @Injectable({
   providedIn: 'root'

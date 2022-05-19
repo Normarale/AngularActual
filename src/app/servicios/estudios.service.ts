@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-const API_ESTUDIO = 'http://localhost:8080/api/test/';
+const API_ESTUDIO = 'https://backendportofoliodelprato.herokuapp.com/api/test/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

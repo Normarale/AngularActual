@@ -81,7 +81,7 @@ export class AcercaComponent implements OnInit {
 
    this.id = this.misdatos.id;
 
-    this.idDomicilio = this.misdatos.idDomicilio;
+    this.idDomicilio = this.domi.idDomicilio;
 
     console.log(this.idDomicilio);
    this.nombre = (<HTMLInputElement>document.getElementById("nombre")).value;
@@ -95,9 +95,9 @@ export class AcercaComponent implements OnInit {
    this.mail = (<HTMLInputElement>document.getElementById("mail")).value;
 
 
-     this.datos.editarDatos(this.id, this.nombre, this.apellido,  this.img_background, this.sobremi, this.fecha, this.mail, this.img_perfil, this.nacionalidad, this.ocupacion, this.idDomicilio ).subscribe(data=>{
-      console.log("datos modificados"+ JSON.stringify(data))
-     })
+     this.datos.editarDatos(this.id, this.nombre, this.apellido,  this.img_background, this.sobremi, this.fecha, this.mail, this.img_perfil, this.nacionalidad, this.ocupacion, this.idDomicilio ).subscribe(data =>{
+       console.log("datos modificados" + JSON.stringify(data))
+     });
 
 
 
