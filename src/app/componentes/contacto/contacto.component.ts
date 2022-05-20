@@ -19,7 +19,7 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  
   public setEditar(): void
     {this.editar==false?this.editar=true:this.editar=false;}
 

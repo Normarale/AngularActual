@@ -6,12 +6,13 @@
 
   <button *ngIf="isLoggenIdExperiencia" (click)="setEditar()">
     <i id="pencil"class="fas fa-edit"></i>
-   </button>
 
-    <input *ngIf="getEditar()" type="text" #nombre [(ngModel)]="experiencia.nombreEmpresa"><br>
-    <input *ngIf="getEditar()" type="text" #descripcion [(ngModel)]="experiencia.descripcion"><br>
-    <input *ngIf="getEditar()" type="text" #fecInicio [(ngModel)]="experiencia.fecInicio">
-    <input *ngIf="getEditar()" type="text" #fecFinal [(ngModel)]="experiencia.fecFinal">
+   </button><br>
+
+    <button *ngIf="isLoggenIdExperiencia" (click)="editarExperiencia()">
+      <i id="pencil"class="fas fa-save"></i>
+     </button><br>
+
     <button *ngIf="isLoggenIdExperiencia">
        <i  id= "pencil"class="fa fa-trash"></i>
      </button>
@@ -22,15 +23,26 @@
 
           </div>
 
-      <div class="row">
+
+        <div class="col-lg-12">
+        <h3>Actualmente:</h3><h5>{{experiencia?.trabajoActual}}</h5>
+        <input *ngIf="getEditar()" type="text" id ="trabajoActual "[(ngModel)]="experiencia.trabajoActual">
+        </div>
+
+      <br><br><br>
+          <div class="row">
               <div class="col-lg-9">
                   <h3>{{experiencia?.nombreEmpresa}}</h3>
+                  <input *ngIf="getEditar()" type="text" id = "nombreEmpresa" [(ngModel)]="experiencia.nombreEmpresa"><br>
                   <p class="fst-italic">
                       {{experiencia?.descripcion}}
+                      <input *ngIf="getEditar()" type="text" id ="descripcion" [(ngModel)]="experiencia.descripcion"><br>
                   </p>
                   <div class="row"></div>
                       <div class="col-lg-2">
                          <p> {{experiencia?.fecInicio}}_*_{{experiencia?.fecFinal}}</p>
+                         <input *ngIf="getEditar()" type="text" id ="fecInicio" [(ngModel)]="experiencia.fecInicio">
+                         <input *ngIf="getEditar()" type="text" id ="fecFinal "[(ngModel)]="experiencia.fecFinal">
                       </div>
                       <div class="col-lg-8">
                           <p> 17 años desempeñando tareas Administrativas y de soporte a gerencia,

@@ -8,25 +8,18 @@
 
     <button *ngIf="isLoggenIdAcerca" (click)="setEditar()">
       <i id="pencil"class="fas fa-edit"></i>
-     </button>
-      <input *ngIf="getEditar()" type="text" id = "nombre" [(ngModel)]="misdatos.nombre"><br>
-      <input *ngIf="getEditar()" type="text" id = "apellido" [(ngModel)]="misdatos.apellido"><br>
-      <input *ngIf="getEditar()" type="text" id = "imagen" [(ngModel)]="misdatos.img_perfil"><br>
-      <input *ngIf="getEditar()" type="text" id = "fecha" [(ngModel)]="misdatos.fecNacimiento"><br>
-      <input *ngIf="getEditar()" type="text" id = "sobremi" [(ngModel)]="misdatos.sobremi">
-      <input *ngIf="getEditar()" type="text" id = "mail" [(ngModel)]="misdatos.mail">
-      <input *ngIf="getEditar()" type="text" id = "ocupacion" [(ngModel)]="misdatos.ocupacion">
-      <input *ngIf="getEditar()" type="text" id = "nacionalidad" [(ngModel)]="misdatos.nacionalidad">
-      <input *ngIf="getEditar()" type="text" id = "fondo" [(ngModel)]="misdatos.img_background"><br>
+     </button><br>
 
+      <button *ngIf="isLoggenIdAcerca" (click)="editarDatos()">
+        <i id="pencil"class="fas fa-save"></i>
+       </button>
+       <br>
 
-      <button *ngIf="isLoggenIdAcerca">
+      <button *ngIf="isLoggenIdAcerca" (click)="borrarDatos()">
          <i  id= "pencil"class="fa fa-trash"></i>
        </button>
 
-       <button *ngIf="isLoggenIdAcerca" (click)="editarDatos()">
-        <i id="pencil"class="fas fa-save"></i>
-       </button>
+
 
         <div class="about-me container">
 
@@ -38,17 +31,21 @@
                 <div class="row">
                         <div class="col-lg-4">
                         <img src="{{misdatos?.img_perfil}}" class="img-fluid" alt="">
+                        <input *ngIf="getEditar()" type="text" id = "imagen" [(ngModel)]="misdatos.img_perfil"><br>
                         </div>
                         <div class="col-lg-8 pt-4 pt-lg-0 content"  >
                             <h3>Desarrolladora Web &amp;-FullStack Developer jr-</h3>
                             <p class="fst-italic">
-                                {{misdatos?.sobremi}}.
+                                {{misdatos?.sobremi}}
+                                <input *ngIf="getEditar()" type="text" id = "sobremi" [(ngModel)]="misdatos.sobremi">
                             </p>
                             <div class="row">
                               <div class="col-lg-6">
                                 <ul>
                                   <li><i class="fas fa-chevron-right color"></i> <strong>Mi Nombre:</strong> <span >{{misdatos?.nombre}}</span></li>
+                                  <input *ngIf="getEditar()" type="text" id = "nombre" [(ngModel)]="misdatos.nombre"><br>
                                     <li><i class="fas fa-chevron-right color"></i> <strong>Apellido:</strong> <span>{{misdatos?.apellido}}</span></li>
+                                    <input *ngIf="getEditar()" type="text" id = "apellido" [(ngModel)]="misdatos.apellido"><br>
                                     <li><i class="fas fa-chevron-right color"></i> <strong>Edad:</strong> <span>46-</span></li>
 
                                 </ul>
@@ -58,6 +55,7 @@
                                     <div class="col-lg-6">
                                             <ul>
                                               <li><i class="fas fa-chevron-right color"></i> <strong>Mi Cumpleaños:</strong> <span >{{misdatos?.fecNacimiento}}</span></li>
+                                              <input *ngIf="getEditar()" type="text" id = "fecha" [(ngModel)]="misdatos.fecNacimiento"><br>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Intereses:</strong> <span>Diseño, desarrollo, análisis</span></li>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Domicilio:</strong> <span>{{miloc?.localidad}}, Córdoba -Argentina-</span></li>
 
@@ -66,7 +64,9 @@
                                     <div class="col-lg-6">
                                             <ul>
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Ocupación:</strong> <span>{{misdatos?.ocupacion}}</span></li>
+                                                <input *ngIf="getEditar()" type="text" id = "ocupacion" [(ngModel)]="misdatos.ocupacion">
                                                 <li><i class="fas fa-chevron-right color"></i> <strong>Nacionalidad:</strong> <span>{{misdatos?.nacionalidad}}</span></li>
+                                                <input *ngIf="getEditar()" type="text" id = "nacionalidad" [(ngModel)]="misdatos.nacionalidad">
                                              </ul>
                                     </div>
 
@@ -75,13 +75,14 @@
                                       <ul>
                                           <li><i class="fas fa-chevron-right color"></i> <strong>Estudios:</strong> <span>Universitarios</span></li>
                                           <li><i class="fas fa-chevron-right color"></i> <strong>Email:</strong> <span>{{misdatos?.mail}}</span></li>
-
+                                          <input *ngIf="getEditar()" type="text" id = "mail" [(ngModel)]="misdatos.mail">
+                                          <input *ngIf="getEditar()" type="text" id = "fondo" [(ngModel)]="misdatos.img_background"><br>
                                       </ul>
                               </div>
 
                             </div>
                                 <p>
-                                    Desarrolladora Web -FullStack, Ingeniera en Sistemas.
+                                   Ingeniera en Sistemas, Estudiante de Desarrollo Web.<br>
                                     17 años de experiencia en el rubro Mutual, con amplio conocimiento en tareas administrativas, conciliaciones bancarias,
                                     relaciones con los clientes.Trabajando en equipo,
                                     y con motivación para seguir aprendiendo...
@@ -112,13 +113,13 @@
                         <div *ngIf="i === 1" class="progress-bar-wrap">
                           <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span *ngIf="i === 2" class="skill" >{{tec?.tecnologia}} <i class="val">75%</i></span>
+                        <span *ngIf="i === 2" class="skill" >{{tec?.tecnologia}} <i class="val">70%</i></span>
                         <div *ngIf="i === 2"   class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span *ngIf="i === 3" class="skill" >{{tec?.tecnologia}} <i class="val">80%</i></span>
+                        <span *ngIf="i === 3" class="skill" >{{tec?.tecnologia}} <i class="val">70%</i></span>
                             <div *ngIf="i === 3" class="progress-bar-wrap">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                             <span *ngIf="i === 4" class="skill" >{{tec?.tecnologia}} <i class="val">75%</i></span>

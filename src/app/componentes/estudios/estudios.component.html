@@ -3,16 +3,18 @@
 
     <button *ngIf="isLoggenIdEstudios" (click)="setEditar()">
       <i id="pencil"class="fas fa-edit"></i>
-     </button>
 
-      <input *ngIf="getEditar()" type="text" #titulo [(ngModel)]="estudios.titulo"><br>
-      <input *ngIf="getEditar()" type="text" #fechaDesde [(ngModel)]="estudios.fechaDesde"><br>
-      <input *ngIf="getEditar()" type="text" #fechaHasta [(ngModel)]="estudios.fechaHasta">
-      <input *ngIf="getEditar()" type="text" #institucion [(ngModel)]="estudios.institucion">
-      <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="estudios.imagen">
+    </button><br>
+
+     <button *ngIf="isLoggenIdEstudios" (click)="editarEstudios()">
+      <i id="pencil"class="fas fa-save"></i>
+     </button><br>
+
       <button *ngIf="isLoggenIdEstudios">
          <i  id= "pencil"class="fa fa-trash"></i>
        </button>
+
+
       <div class="container">
 
           <div class="section-title">
@@ -27,10 +29,15 @@
                       <div *ngFor="let estudio of estudios?.slice(0,2)" class="dropdown-estudio" class="estudio-item">
 
                           <h4 >{{estudio?.titulo}}</h4>
+                          <input *ngIf="getEditar()" type="text" #titulo [(ngModel)]="estudio.titulo"><br>
                           <h5>{{estudio?.fechaDesde}} - {{estudio?.fechaHasta}}</h5>
+                          <input *ngIf="getEditar()" type="text" #fechaHasta [(ngModel)]="estudio.fechaHasta">
+                          <input *ngIf="getEditar()" type="text" #fechaDesde [(ngModel)]="estudio.fechaDesde"><br>
                           <p><em>{{estudio?.institucion}}</em></p>
                           <p>Facultad Regional Córdoba</p>
+                          <input *ngIf="getEditar()" type="text" #institucion [(ngModel)]="estudio.institucion">
                           <img src="{{estudio?.imagen}}" alt="Logo">
+                          <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="estudio.imagen">
 
                       </div>
               </div>
@@ -40,9 +47,14 @@
                        <h2 class="estudio-title">Desarrollo Web</h2>
                       <div *ngFor="let estudio of estudios?.slice(2,8)"class="estudio-item">
                           <h4>{{estudio?.titulo}}</h4>
+                          <input *ngIf="getEditar()" type="text" #titulo [(ngModel)]="estudio.titulo"><br>
                           <h5>{{estudio?.fechaDesde}} - {{estudio?.fechaHasta}}</h5>
+                          <input *ngIf="getEditar()" type="text" #fechaDesde [(ngModel)]="estudio.fechaDesde"><br>
+                          <input *ngIf="getEditar()" type="text" #fechaHasta [(ngModel)]="estudio.fechaHasta">
                           <p><em>{{estudio?.institucion}} </em></p>
+                          <input *ngIf="getEditar()" type="text" #institucion [(ngModel)]="estudio.institucion">
                           <img src="{{estudio?.imagen}}" alt="Logo">
+                          <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="estudio.imagen">
                       </div>
 
 
@@ -50,17 +62,27 @@
                       <div *ngFor="let estudio of estudios?.slice(8,12)"class="estudio-item">
 
                           <h4>{{estudio?.titulo}}</h4>
+                          <input *ngIf="getEditar()" type="text" #titulo [(ngModel)]="estudio.titulo"><br>
                           <h5>{{estudio?.fechaDesde}} - {{estudio?.fechaHasta}}</h5>
+                          <input *ngIf="getEditar()" type="text" #fechaDesde [(ngModel)]="estudio.fechaDesde"><br>
+                          <input *ngIf="getEditar()" type="text" #fechaHasta [(ngModel)]="estudio.fechaHasta">
                           <p><em>{{estudio?.institucion}}</em></p>
+                          <input *ngIf="getEditar()" type="text" #institucion [(ngModel)]="estudio.institucion">
                           <img src="{{estudio?.imagen}}" alt="Logo">
+                          <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="estudio.imagen">
                       </div>
                       <h2 class="estudio-title">Actualmente</h2>
                       <div *ngFor="let estudio of estudios?.slice(12,20)" class="estudio-item">
 
                           <h4>{{estudio?.titulo}}</h4>
+                          <input *ngIf="getEditar()" type="text" #titulo [(ngModel)]="estudio.titulo"><br>
                           <h5>{{estudio?.fechaDesde}} - {{estudio?.fechaHasta}}</h5>
+                          <input *ngIf="getEditar()" type="text" #fechaDesde [(ngModel)]="estudio.fechaDesde"><br>
+                          <input *ngIf="getEditar()" type="text" #fechaHasta [(ngModel)]="estudio.fechaHasta">
                           <p><em>{{estudio?.institucion}} </em></p>
+                          <input *ngIf="getEditar()" type="text" #institucion [(ngModel)]="estudio.institucion">
                           <img src="{{estudio?.imagen}}" alt="Logo">
+                          <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="estudio.imagen">
                       </div>
               </div>
           </div>

@@ -39,3 +39,10 @@
 button{
   margin-left: 980px;
 }
+input{
+  width: 280px;
+  height: auto;
+  background-color: #fff;
+  color: rgb(6, 6, 6);
+}
+

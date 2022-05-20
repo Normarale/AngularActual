@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const API_LOCALIDAD = 'https://backendportofoliodelprato.herokuapp.com/api/test/';
+const API_LOCALIDAD = 'https://backendportafoliodelprato.herokuapp.com/api/test/';
 
 
 

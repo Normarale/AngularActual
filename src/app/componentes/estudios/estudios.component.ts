@@ -17,6 +17,7 @@ export class EstudiosComponent implements OnInit {
   fechaHasta?:string ;
   institucion?:string;
   imagen?:string ;
+  id?:any;
 
   private editar:boolean=false
 
@@ -30,6 +31,17 @@ export class EstudiosComponent implements OnInit {
 
         this.estudios = data;
       })
+  }
+
+  public editarEstudios(){
+   this.id = this.estudios.id;
+  }
+
+
+  public borrarEstudios(){
+    this.est.borrarEstudios(this.id).subscribe(data=>{
+      console.log("Datos borrados" + JSON.stringify(data) )
+    })
   }
 
   public setEditar(): void

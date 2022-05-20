@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const API_PERSONA = 'https://backendportofoliodelprato.herokuapp.com/api/test/';
+const API_PERSONA = 'https://backendportafoliodelprato.herokuapp.com/api/test/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -37,7 +37,8 @@ export class DatosService {
   {params},httpOptions);
 }*/
 
-editarDatos(id:any, nombre:string, apellido:string, img_background:string, sobremi:string, fecNacimiento:string, mail:string, img_perfil:string, nacionalidad:string, ocupacion:string, idDomicilio:any ): Observable <any> {
+editarDatos(id:any, nombre:string, apellido:string, img_background:string, sobremi:string, fecNacimiento:string, mail:string, img_perfil:string, nacionalidad:string, ocupacion:string, idDomicilio:Object ): Observable <any> {
+ console.log(id, nombre, apellido, img_background, sobremi, fecNacimiento, mail,img_perfil, nacionalidad, ocupacion, idDomicilio  )
   return this.http.put<any>(API_PERSONA + `persona/editar/id = ${id}?&nombre=${nombre}&apellido=${apellido}&img_background=${img_background}&sobremi=${sobremi}&fecNacmiento=${fecNacimiento}&img_perfil=${img_perfil}&ocupacion=${ocupacion}&mail=${mail}&nacionalidad=${nacionalidad}&idDomicilio=${idDomicilio}`, {}, httpOptions)
 };
 

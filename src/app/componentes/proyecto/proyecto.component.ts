@@ -15,7 +15,10 @@ export class ProyectoComponent implements OnInit {
  proyecto:any;
  contenido?:string;
   private editar:boolean=false
-
+  private id?: any;
+private descProyecto?:string;
+private fotoUrl?:string;
+private idPersona?:any;
 
   constructor(private proyec:ProyectosService) { }
 
@@ -28,9 +31,27 @@ export class ProyectoComponent implements OnInit {
   }
 
 
+public editarProyectos(){
+  this.id = this.proyecto.id;
+  this.idPersona = this.proyecto.idPersona
+
+   this.descProyecto = (<HTMLInputElement>document.getElementById("descripcion")).value;
+   this.fotoUrl = (<HTMLInputElement>document.getElementById("foto")).value;
+       this.proyec.editarProyecto(this.id, this.descProyecto, this.fotoUrl, this.idPersona ).subscribe(data =>{
+       console.log("datos modificados" + JSON.stringify(data))
+     });
+
+}
+
+
+
   public setEditar(): void
   {this.editar==false?this.editar=true:this.editar=false;}
 
   public getEditar():boolean{return this.editar;}
+
+
+
+
 
 }

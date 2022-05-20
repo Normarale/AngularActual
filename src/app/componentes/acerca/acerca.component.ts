@@ -14,28 +14,28 @@ import { DatosService } from 'src/app/servicios/datos.service';
 export class AcercaComponent implements OnInit {
   @Input()
   isLoggenIdAcerca: boolean=false;
-   public codPostal?:string = "";
-   public idLocalidad?:any = "";
-   public localidad?:string = "";
-   public misdatos:any;
-   public miloc:any;
-   public mitecno:any;
-   public domi: any;
-   public contenido?:string;
+    codPostal?:string;
+    idLocalidad?:any;
+    localidad?:string;
+    misdatos:any;
+    miloc:any;
+    mitecno:any;
+    domi: any;
+   contenido?:string;
 
-  public id?:any;
-  public img_background?:string;
-  public nombre?:string;
-  public apellido?:string;
-  public fecha?:string;
-  public sobremi?:string;
-  public img_perfil?:string;
-  public ocupacion?:string ;
-  public mail?:string;
-  public nacionalidad?:string;
-  public idDomicilio?:any;
-  public direccion?:string;
-  public altura?: string;
+   id?:any;
+   img_background?:string;
+   nombre?:string;
+   apellido?:string;
+   fecha?:string;
+   sobremi?:string;
+   img_perfil?:string;
+   ocupacion?:string ;
+   mail?:string;
+   nacionalidad?:string;
+   idDomicilio?:Object;
+   direccion?:string;
+   altura?: string;
 
 
    private editar:boolean=false
@@ -80,10 +80,11 @@ export class AcercaComponent implements OnInit {
    public editarDatos(){
 
    this.id = this.misdatos.id;
+   const domicilio = {
+     domicilio :this.misdatos.idDomicilio
 
-    this.idDomicilio = this.domi.idDomicilio;
+    }
 
-    console.log(this.idDomicilio);
    this.nombre = (<HTMLInputElement>document.getElementById("nombre")).value;
    this.apellido = (<HTMLInputElement>document.getElementById("apellido")).value;
    this.sobremi=(<HTMLInputElement>document.getElementById("sobremi")).value;
@@ -95,14 +96,19 @@ export class AcercaComponent implements OnInit {
    this.mail = (<HTMLInputElement>document.getElementById("mail")).value;
 
 
-     this.datos.editarDatos(this.id, this.nombre, this.apellido,  this.img_background, this.sobremi, this.fecha, this.mail, this.img_perfil, this.nacionalidad, this.ocupacion, this.idDomicilio ).subscribe(data =>{
+
+     this.datos.editarDatos(this.id, this.nombre, this.apellido,  this.img_background, this.sobremi, this.fecha, this.mail, this.img_perfil, this.nacionalidad, this.ocupacion, domicilio ).subscribe(data =>{
        console.log("datos modificados" + JSON.stringify(data))
      });
 
-
-
    }
 
+
+  public borrarDatos(){
+    this.datos.borrarDatos(this.id).subscribe(data=>{
+      console.log("Datos borrados" + JSON.stringify(data) )
+    })
+  }
 
    public setEditar(): void
     {this.editar==false?this.editar=true:this.editar=false;}

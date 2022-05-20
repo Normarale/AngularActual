@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 
 
-const API_DOMICILIO = 'https://backendportofoliodelprato.herokuapp.com/api/test/';
+const API_DOMICILIO = 'https://backendportafoliodelprato.herokuapp.com/api/test/';
 
 
 

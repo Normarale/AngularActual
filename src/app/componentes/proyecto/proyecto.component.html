@@ -5,15 +5,16 @@
   <!--  Proyectos -->
   <button *ngIf="isLoggenIdProyecto" (click)="setEditar()">
     <i id="pencil"class="fas fa-edit"></i>
-   </button>
+   </button><br>
 
-    <input *ngIf="getEditar()" type="text" #imagen [(ngModel)]="proyecto"><br>
-    <input *ngIf="getEditar()" type="text" #fecha [(ngModel)]="proyecto"><br>
-    <input *ngIf="getEditar()" type="text" #sobre mi [(ngModel)]="proyecto">
-    <input *ngIf="getEditar()" type="text" #mail [(ngModel)]="proyecto">
+    <button *ngIf="isLoggenIdProyecto" (click)="editarProyectos()">
+      <i id="pencil"class="fas fa-save"></i>
+     </button><br>
+
     <button *ngIf="isLoggenIdProyecto">
        <i  id= "pencil"class="fa fa-trash"></i>
-     </button>
+     </button><br>
+
 
      <div class="proyecto container">
 
@@ -38,13 +39,13 @@
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="proyecto-wrap">
             <img src="{{proyecto?.fotoUrl}}" class="img-fluid" alt="">
+            <input *ngIf="getEditar()" type="text" id ="descripcion" [(ngModel)]="proyecto.proyectoDesc"><br>
             <div class="proyecto-info">
               <h4>{{proyecto?.proyectoDesc}}</h4>
+              <input *ngIf="getEditar()" type="text" id ="foto" [(ngModel)]="proyecto.fotoUrl"><br>
+
               <p>Web</p>
-             <!-- <div class="portfolio-links">
-                <a href="../../../assets/img/MyPortfolio.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="" data-gallery="portfoliodetalleGalery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>-->
+
             </div>
           </div>
         </div>

@@ -143,3 +143,14 @@
   bottom: 15px;
   right: 15px;
 }
+
+button{
+  margin-left: 980px;
+}
+input{
+  width: 350px;
+  height: auto;
+  background-color: #fff;
+  color: rgb(6, 6, 6);
+}
+

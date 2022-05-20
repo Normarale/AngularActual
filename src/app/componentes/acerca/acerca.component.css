@@ -90,8 +90,8 @@ button{
   margin-left: 980px;
 }
 input{
-  width: 500px;
+  width: 300px;
   height: auto;
-  background-color: transparent;
-  color: #fff;
+  background-color: #fff;
+  color: rgb(6, 6, 6);
 }
