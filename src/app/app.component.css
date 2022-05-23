@@ -1,0 +1,237 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body{
+  font-family: "Open Sans", sans-serif;
+  background-color: #040404;
+  color: #fff;
+  position: relative;
+  background: transparent;
+  max-height: 850px;
+  overflow-y: auto;
+}
+body::before {
+  content: "";
+  position:fixed;
+  background: #040404 url("../assets/img/negro_plateado.jpg") top right no-repeat ;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 850px;
+  z-index: -1;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+.navbar-collapse{
+  background-color: transparent;
+  }
+/*--------------------------------------------------------------
+# componentes General
+--------------------------------------------------------------*/
+
+#about, #estudios, #experiencia, #contacto, #proyecto, #login {
+  margin-top: 170px;
+  padding-top: 60px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x:hidden;
+  background-color: #040404;
+
+}
+.section-title h2 {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+}
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #f12294fd;
+  margin: 4px 10px;
+}
+
+.navbar-collapse.show {
+
+  background-color:rgba(04, 04, 04, 0.8);
+
+}
+
+
+/*----------------------------------------
+    Logo
+------------------------------------------*/
+.Logo{
+  position:relative;
+  margin-top: 3px;
+  margin-left: 50px;
+  width: 95px;
+  height: 78px;
+  border-radius:8px;
+  box-shadow: 5px 3px #dcdedfea;
+  animation: moverIzquierda 1s ease-in;
+  display: block;
+}
+
+.texto{
+ position:relativa;
+ margin-top: -70px;
+ margin-left: 110px;
+}
+
+.texto p{
+ color:rgb(250, 206, 156);
+ font-size: 18px;
+ visibility: hidden;
+
+}
+
+.Logo:hover .texto p {
+ visibility: visible;
+ animation: moverIzquierda 1s ease-in;
+ display: block;
+
+}
+
+@keyframes moverIzquierda{
+ 0%{
+     opacity: 0;
+     transform: translateX(-100px);
+ }
+
+ 100%{
+     opacity: 1;
+     transform: translate(0);
+ }
+}
+.navbar-collapse.show {
+
+  background-color:rgba(04, 04, 04, 0.8);
+
+}
+
+/* -------------------------
+    redes sociales menu ppal
+----------------------------*/
+
+
+ .social-links{
+  margin-top: 3px;
+  display:flex;
+  margin-left:  75%;
+  margin-top: 0px;
+}
+
+.social-links a{
+  color:#fff;
+  justify-content:space-between;
+  font-size: 30px;
+  line-height: 1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right:15px;
+
+}
+.social-links a:hover {
+  background: #d2188d;
+}
+
+/* ----------------------------
+barra de navegacion menu
+--------------------------------*/
+.navbar li {
+  position: relative;
+}
+.navbar li + li {
+  margin-left: 50px;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  white-space:pre-wrap;
+  transition: 0.3s;
+
+}
+
+.navbar a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 4px;
+  left: 0;
+  background-color: #d2188d;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+.navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
+  visibility: visible;
+  width: 25px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #fff;
+}
+
+
+/*---------------------
+Titulo pantalla principal
+--------------------------*/
+.tituloppal h1 {
+
+  font-size: 150px;
+  color:#a09e9c;
+  margin-top: 230px;
+  line-height: 1;
+  font-family: "Tangerine", sans-serif;
+  text-shadow: 8px 0.1px #d2188e;
+}
+
+.tituloppal h2{
+  text-align:justify;
+  margin-left: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  color: rgb(204, 24, 240);
+  text-shadow: 0.9px 0.5px rgb(253, 250, 250);
+
+}
+
+.tituloppal h3{
+  text-align:justify;
+  margin-left: 300px;
+  font-size: 18px;
+  margin-top: 20px;
+  color: rgb(5, 5, 5);
+  text-shadow: 0.9px 0.5px rgb(253, 250, 250);
+
+}
+
+.tituloppal span {
+  color: rgb(250, 206, 156);
+  border-bottom: 2px solid #faf3f8;
+  padding-bottom: 6px;
+  font-size: 17px;
+}
